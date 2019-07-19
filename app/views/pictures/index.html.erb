@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
 
-<h1>Pictures</h1>
+<h2>投稿記事一覧</h2>
 
 <table>
   <thead>
@@ -13,10 +13,10 @@
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
-        <td><%= picture.image %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag picture.image.url %></td>
+        <td><%= link_to '詳細', picture %></td>
+        <td><%= link_to '編集', edit_picture_path(picture) %></td>
+        <td><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Picture', new_picture_path %>
+<%= link_to '新しい記事を投稿する', new_picture_path %>
