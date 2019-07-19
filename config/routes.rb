@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'new/create'
-  get 'new/show'
+  get 'users/new'
+  get 'users/create'
+  get 'users/show'
   resources :pictures do
     collection do
      post :confirm
