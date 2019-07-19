@@ -21,10 +21,12 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
   end
 
   def create
     @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
 
     respond_to do |format|
       if @picture.save
