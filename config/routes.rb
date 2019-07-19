@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'new/create'
+  get 'new/show'
   resources :pictures do
     collection do
      post :confirm
