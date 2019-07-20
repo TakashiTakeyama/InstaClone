@@ -1,9 +1,12 @@
 <h3>プロフィール画面</h3>
 
-<h1><%= @user.name %>のページ</h1>
+<h2><%= @user.name %>のページ</h2>
 
-<p>icon: <%= image_tag @user.image.url %></p>
+<p><%= image_tag @user.image.url %></p>
 
 <p>メールアドレス: <%= @user.email %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to '新しい記事を投稿する', new_picture_path %><br>
+<%= link_to 'プロフィールを編集する', edit_user_path(@user) %><br>
+<%= link_to 'お気に入り一覧へ', okiniiri_pictures_path %>
+

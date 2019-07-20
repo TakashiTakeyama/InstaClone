@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>アカウント作成</h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -12,7 +12,7 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :image %>
+  <%= f.label :あなたのimage %>
   <%= f.file_field :image %>
 
   <%= f.label :name %>

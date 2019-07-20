@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy ]
+  before_action :only_login_user, only: %i[index show okiniiri new edit confirm destroy]
 
   def index
     @pictures = Picture.all
@@ -74,5 +75,12 @@ class PicturesController < ApplicationController
 
   def picture_params
     params.require(:picture).permit(:image, :image_cache, :content)
+  end
+
+  def only_login_user
+    if logged_in?
+    else
+      redirect_to  new_session_path, notice: 'ログインしてください'
+    end
   end
 end
