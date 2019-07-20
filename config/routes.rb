@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :pictures do
     collection do
      post :confirm
+      get :okiniiri
     end
   end
   resources :favorites, only: %i[create destroy]

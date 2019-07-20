@@ -9,6 +9,11 @@ class PicturesController < ApplicationController
     @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
+  def okiniiri
+    @favorite = current_user.favorites
+    @picture = Picture.find(current_user.id)
+  end
+
   def new
     if params[:back]
       @picture = Picture.new(picture_params)
