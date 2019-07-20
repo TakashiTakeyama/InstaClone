@@ -16,9 +16,17 @@
   <% end %>
 </p>
 
-<p>投稿者: <%= @picture.user.name %></p>
-<!--<p><%#= @picture.user.content %></p>-->
 
-<%= link_to '編集', edit_picture_path(@picture) %> |
+<p>投稿者: <%= @picture.user.name %></p>
+
+<p>
+  <% if @picture.user_id == current_user.id %>
+    <tr>
+      <td><%= link_to '編集', edit_picture_path(@picture) %></td>
+      <td><%= link_to '削除', @picture, method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    </tr>
+  <% else %>
+  <% end %>
+</p>
+
 <%= link_to '投稿記事一覧へ', pictures_path %>
-<%#= link_to 'お気に入り一覧へ', okiniiri_pictures_path %>
