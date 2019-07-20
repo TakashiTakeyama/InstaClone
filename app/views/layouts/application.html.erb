@@ -16,6 +16,9 @@
 
   <% if logged_in? %>
     <%= link_to "プロフィール", user_path(current_user.id) %>
+    <%= link_to "記事を投稿する", new_picture_path %>
+    <%= link_to "投稿記事一覧へ", pictures_path %>
+    <%= link_to "お気に入り記事一覧へ", okiniiri_pictures_path %>
     <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
   <% else %>
     <%= link_to "アカウント作成", new_user_path %>

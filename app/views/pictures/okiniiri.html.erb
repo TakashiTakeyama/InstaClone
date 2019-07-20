@@ -7,9 +7,10 @@
       <td><%= image_tag fav_pic.picture.image.url %></td>
       <td><%= fav_pic.picture.user.name %></td>
       <td><%= fav_pic.picture.content %></td>
-      <td><%= link_to '記事の詳細へ', picture_path(fav_pic.picture.user.id) %></td>
+      <td><%= link_to '記事の詳細へ', picture_path(fav_pic.picture.id) %></td>
   <!--    <td><%#= link_to '編集', edit_picture_path(fav_pic) %></td>-->
   <!--    <td><%#= link_to '削除', fav_pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      <%# debug %>
     </tr>
   <% end %>
 </div>
