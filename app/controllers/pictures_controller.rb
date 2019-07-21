@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
 
   def okiniiri
     @favorite = current_user.favorites
-    @picture = Picture.find(current_user.id)
+    @picture = Picture.all
   end
 
   def new

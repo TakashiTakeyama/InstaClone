@@ -22,7 +22,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
-  gem 'better_errors'
+  # gem 'better_errors'
 end
 
 group :development do
