@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div class="cgFsT">
   <div class="field">
     <%= form.label :写真 %>
     <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
@@ -23,4 +23,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>

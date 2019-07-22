@@ -1,27 +1,13 @@
-<!--<p id="notice"><%#= notice %></p>-->
-
-<h2>投稿記事一覧</h2>
-
-<table>
-  <thead>
+<h3>投稿記事一覧</h3>
+<body>
+  <% @pictures.each do |picture| %>
     <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
+      <span>
         <td><%= image_tag picture.image.url %></td>
         <td><%= picture.user.name %></td>
         <td><%= link_to '詳細', picture %></td>
-<!--        <td><%#= link_to '編集', edit_picture_path(picture) %></td>-->
-<!--        <td><%#= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </span>
+    </tr>
+  <% end %>
+</body>
 
-<br>
-
-<%#= link_to '新しい記事を投稿する', new_picture_path %>

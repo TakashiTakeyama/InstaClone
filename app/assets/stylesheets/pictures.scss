@@ -1,3 +1,18 @@
 // Place all the styles related to the pictures controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cgFsT {
+  max-width: 255px;
+  //flex-direction: column;
+  //justify-content: center;
+  background-color: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: black;
+  border: solid 1px silver;
+  border-radius: 10px;
+}
