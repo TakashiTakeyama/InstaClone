@@ -35,17 +35,23 @@ class PicturesController < ApplicationController
     # @picture = Picture.new(picture_params)
     @picture = current_user.pictures.build(picture_params)
 
-    respond_to do |format|
-      if @picture.save
-        PictureMailer.picture_mail(@picture).deliver
-        format.html { redirect_to @picture, notice: '記事を投稿しました、確認用メールを送りました' }
-        format.json { render :show, status: :created, location: @picture }
-      else
-        format.html { render :new }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
-      end
+    # respond_to do |format|
+    #   if @picture.save
+    #     PictureMailer.picture_mail(@picture).deliver
+    #     format.html { redirect_to @picture, notice: '記事を投稿しました、確認用メールを送りました' }
+    #     format.json { render :show, status: :created, location: @picture }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @picture.errors, status: :unprocessable_entity }
+    #   end
+    # end
+    if @picture.save
+      redirect_to pictures_url
+    else
+      render 'new'
     end
   end
+
 
   def update
     respond_to do |format|
