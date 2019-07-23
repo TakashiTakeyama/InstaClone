@@ -48,15 +48,17 @@ class PicturesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @picture.update(picture_params)
+
+      if @picture.user_id == session[:user_id]
+      @picture.update(picture_params)
         format.html { redirect_to @picture, notice: '記事を編集しました' }
         format.json { render :show, status: :ok, location: @picture }
+      elsif @picture.user_id != session[:user_id]
+        redirect_to pictures_path, notice: "その行為は禁止されています"
       else
         format.html { render :edit }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   def destroy

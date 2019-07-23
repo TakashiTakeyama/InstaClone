@@ -4,9 +4,8 @@
 <p><%= image_tag @user.image.url %></p>
 
 <!--<p>メールアドレス: <%#= @user.email %></p>-->
-
+<% if @user.id == session[:user_id] %>
 <%= link_to 'プロフィールを編集する', edit_user_path(@user) %><br>
-<!--<%#= link_to '新しい記事を投稿する', new_picture_path, size: :'150x150' %><br>-->
-<!--<%#= link_to '投稿記事一覧へ',  pictures_path %><br>-->
-<%#= link_to 'お気に入り一覧へ', okiniiri_pictures_path %>
+<% else %>
+<% end %>
 
