@@ -24,7 +24,7 @@
               <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
               <li><%= link_to "記事を投稿する", new_picture_path %></li>
               <li><%= link_to "投稿記事一覧へ", pictures_path %></li>
-              <li><%= link_to "お気に入り記事一覧へ", okiniiri_pictures_path %></li>
+              <li><%= link_to "お気に入り記事一覧へ", favorites_pictures_path %></li>
               <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
             <% else %>
               <li><%= link_to "アカウント作成", new_user_path %></li>
