@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -24,8 +23,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.id == session[:user_id]
+      @user.update(user_params)
       redirect_to user_path(current_user.id), notice: "プロフィール画像を編集しました！"
+    elsif @user.id != session[:user_id]
+      redirect_to pictures_path, notice: "その行為は禁止されています"
     else
       render 'edit', notice: @user.errors.full_messages
     end
