@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(current_user.id), notice: "プロフィール画像を編集しました！"
     else
-      render 'edit'
+      render 'edit', notice: @user.errors.full_messages
     end
   end
 

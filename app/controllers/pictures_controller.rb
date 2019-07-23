@@ -10,7 +10,7 @@ class PicturesController < ApplicationController
     @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
-  def okiniiri
+  def favorites
     @favorite = current_user.favorites
     @picture = Picture.all
   end
