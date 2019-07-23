@@ -16,7 +16,7 @@ gem 'faker'
 
 gem 'mini_magick', '~> 4.8'
 gem 'carrierwave'
-
+gem 'letter_opener_web'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
