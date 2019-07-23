@@ -1,12 +1,13 @@
 ja:
   activerecord:
     models:
-      blog: ブログ
+      picture: ピクチャ
       user: ユーザー
     attributes:
-      blog:
+      picture:
         title: タイトル
         content: 内容
+        image_cache: 写真
       user:
         title: タイトル
         name: 名前
