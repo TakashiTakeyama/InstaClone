@@ -29,6 +29,7 @@ class PicturesController < ApplicationController
   def confirm
     # @picture = Picture.new(picture_params)
     @picture = current_user.pictures.build(picture_params)
+    render 'new' if @picture.invalid?
   end
 
   def create
